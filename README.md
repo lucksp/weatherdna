@@ -11,9 +11,11 @@ There are 2 endpoints you'll need:
 
 The temperature comes back from the API in celsius, you'll find a conversion function in `utils/conversions`
 
-Here's a list of priorities for you.
+Here's a list of priorities for you. Please don't spend more than 2-3 hours. We're looking for how you think and approach problems, not overly concerned with a 100% polished UI that you'd post on ProductHunt.
 
 1. Working search & fetching weather data
 1. Handle errors within the UI (for example, search returns no results)
 1. Extended forecast in UI
 1. Visual Styles
+
+When you have completed this, please push to a repo on github and either send us a public link or add @mckernanin +  @danhannigan as collaborators if you would rather make the repository public.
