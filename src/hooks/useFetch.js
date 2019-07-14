@@ -3,9 +3,11 @@ import { fetchWrapper } from "../api/api";
 
 export const useFetch = fetchOptions => {
   const [response, setResponse] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState([]);
 
   const fetchData = async fetchOptions => {
+    setIsLoading(true);
     const { url, options } = fetchOptions;
 
     try {
@@ -15,7 +17,8 @@ export const useFetch = fetchOptions => {
     } catch (error) {
       setError(error);
     }
+    setIsLoading(false);
   };
 
-  return [response, error, fetchData];
+  return [fetchData, response, error, isLoading];
 };

@@ -6,9 +6,11 @@ import ResultList from "./ResultList";
 
 const SearchWeather = () => {
   const [inputValue, setInputValue] = useState("");
-  const [results, error, fetchData] = useFetch();
+  const [fetchData, results, error] = useFetch();
 
   const sendLocation = async () => {
+    if (!inputValue) return false;
+
     const fetchObj = {};
     fetchObj.url = `/api/location/search/?query=${inputValue}`;
 
@@ -16,7 +18,7 @@ const SearchWeather = () => {
   };
 
   const submit = e => {
-    if (e.key !== "Enter") return false;
+    if (e.key !== "Enter" || !inputValue) return false;
     sendLocation();
   };
 
