@@ -11,7 +11,7 @@ const ResultList = props => {
   return (
     <div className="weather-results-list">
       {results.map(result => {
-        return <ListItem key={result.woeid} {...result} handleClick />;
+        return <ListItem key={result.woeid} {...result} />;
       })}
     </div>
   );

@@ -1,10 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useFetch } from "../../hooks/useFetch";
+import ListItemDetails from "./ListItemDetails";
+
+import { StyledListItem } from "./ListItem.css";
 
 const ListItem = props => {
-  const { title } = props;
+  const { title, woeid } = props;
+  const [results, error, fetchData] = useFetch();
 
-  return <div>{title}</div>;
+  const handleClick = async () => {
+    const fetchObj = {};
+    fetchObj.url = `/api/location/${woeid}/`;
+
+    await fetchData(fetchObj);
+  };
+
+  return (
+    <StyledListItem onClick={handleClick}>
+      {title}
+      {results && <ListItemDetails details={results.consolidated_weather} />}
+    </StyledListItem>
+  );
 };
 
 ListItem.propTypes = {
