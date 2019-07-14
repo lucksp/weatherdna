@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Search from "./Search";
 import { useFetch } from "../../hooks/useFetch";
 import ResultList from "./ResultList";
+import Card from "../../components/card";
+import { StyledSearchWeather } from "./SearchWeather.css";
 
 const SearchWeather = () => {
   const [inputValue, setInputValue] = useState("");
@@ -27,15 +29,17 @@ const SearchWeather = () => {
   };
 
   return (
-    <div className="weather-search">
-      <div className="weather-help-text">Search for Weather:</div>
-      <Search
-        submit={submit}
-        handleChange={handleChange}
-        handleClick={sendLocation}
-      />
+    <StyledSearchWeather>
+      <Card class="weather-search">
+        <div className="weather-help-text">Search for Weather:</div>
+        <Search
+          submit={submit}
+          handleChange={handleChange}
+          handleClick={sendLocation}
+        />
+      </Card>
       {results && <ResultList results={results} error={error} />}
-    </div>
+    </StyledSearchWeather>
   );
 };
 

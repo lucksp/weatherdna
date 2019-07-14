@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ListItem from "../../../components/listitem";
+import Card from "../../../components/card";
 
 const ResultList = props => {
   const { results, error } = props;
@@ -11,7 +12,11 @@ const ResultList = props => {
   return (
     <div className="weather-results-list">
       {results.map(result => {
-        return <ListItem key={result.woeid} {...result} />;
+        return (
+          <Card key={result.woeid}>
+            <ListItem {...result} />
+          </Card>
+        );
       })}
     </div>
   );

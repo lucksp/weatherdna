@@ -7,7 +7,7 @@ import { StyledListItem } from "./ListItem.css";
 
 const ListItem = props => {
   const { title, woeid } = props;
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [fetchData, results, error, isLoading] = useFetch();
 
   const handleClick = async () => {
@@ -31,15 +31,15 @@ const ListItem = props => {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div>
-          {title}
+        <React.Fragment>
+          <div className="weather-city-title">{title}</div>
           {results && (
             <ListItemDetails
               details={results.consolidated_weather}
               isOpen={isOpen}
             />
           )}
-        </div>
+        </React.Fragment>
       )}
     </StyledListItem>
   );

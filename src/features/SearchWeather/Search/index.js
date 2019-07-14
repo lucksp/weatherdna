@@ -8,7 +8,7 @@ const Search = props => {
   return (
     <div className="wrapper-search">
       <Input
-        placeholder="search for your city"
+        placeholder="Search for your city"
         handleSubmit={submit}
         handleChange={handleChange}
       />

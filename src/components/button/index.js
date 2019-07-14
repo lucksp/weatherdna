@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { StyledButton } from "./button.css";
 
 const Button = props => {
   const { type, handleClick, value } = props;
 
   return (
-    <button type={type} onClick={handleClick}>
+    <StyledButton type={type} onClick={handleClick}>
       {value}
-    </button>
+    </StyledButton>
   );
 };
 

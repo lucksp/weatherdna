@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { StyledInput } from "./input.css";
+
 const Input = props => {
   const { type, handleSubmit, handleChange, placeholder } = props;
 
   return (
-    <input
+    <StyledInput
       type={type}
       placeholder={placeholder}
       onChange={handleChange}
