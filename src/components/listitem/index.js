@@ -27,19 +27,17 @@ const ListItem = props => {
   }
 
   return (
-    <StyledListItem onClick={handleClick}>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <React.Fragment>
-          <div className="weather-city-title">{title}</div>
-          {results && (
-            <ListItemDetails
-              details={results.consolidated_weather}
-              isOpen={isOpen}
-            />
-          )}
-        </React.Fragment>
+    <StyledListItem onClick={handleClick} isOpen={isOpen}>
+      <div className="weather-details-title">
+        <span className="arrow">⟩</span>
+        <div className="weather-city-title">{title}</div>
+      </div>
+      {isLoading && <div>Loading...</div>}
+      {results && (
+        <ListItemDetails
+          details={results.consolidated_weather}
+          isOpen={isOpen}
+        />
       )}
     </StyledListItem>
   );

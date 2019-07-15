@@ -10,6 +10,7 @@ body{
     margin: 0;
     color: #2b2c2d;
     background-color: #edeef0;
+    box-sizing: border-box;
 }
 
 a {

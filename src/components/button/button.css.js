@@ -8,4 +8,6 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   color: #e9e9eb;
   background-color: #008996;
+  height: inherit;
+  width: 80px;
 `;
